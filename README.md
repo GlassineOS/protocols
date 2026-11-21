@@ -5,7 +5,7 @@ The interfaces GlassineOS components speak to each other, in one place:
 | File | Between | What |
 |---|---|---|
 | `glassine-ink-v1.xml` | the compositor (`sway`) and apps (the shell's GTK 3 module `glassine-ink` for GTK apps) | Wayland protocol: where on its surfaces the pen draws, and the brush the panel engine previews the stroke with |
-| `glassine-handwriting-v1.xml` | the compositor (`sway`) and apps (`libglassine-handwriting` in `GlassineOS/handwriting`) | Wayland protocol: the pen interface of handwriting (GlassineOS/handwriting spec 004): an app's surface gets its pen strokes as numbered vector strokes, their neatened versions, readings and candidates, and reports what the person did with them |
+| `glassine-handwriting-v1.xml` | the compositor (`sway`) and apps (`libglassine-handwriting` in `GlassineOS/handwriting`) | Wayland protocol: the pen interface of handwriting (GlassineOS/handwriting spec 004): an app's surface gets its pen strokes as numbered vector strokes, their neatened versions, readings and candidates, and reports what the person did with them. Version 2 adds writing regions (spec 005): handwritten fields on one surface, each with its own area, lines, field type and value, a text mode, word layout and stored ink handed back |
 | `glassine-epd-output-proto.h` | the compositor's panel output and `glassine-epdd-desktop` (`epd`) | socket protocol: frame buffers, changed rectangles, the cursor, the grey and gamma passes |
 
 Both are versioned: a change is backwards compatible, or it raises the version and the
